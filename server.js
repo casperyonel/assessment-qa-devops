@@ -26,13 +26,13 @@ app.get('/', (req, res) => {
 
 app.get('/js', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.js'))
-    // rollbar.info("HTML file served successfully")
+    rollbar.info("JS file served successfully")
 })
 
-// app.get('/styles', (req, res) => {
-//     res.sendFile(path.join(__dirname, '/public/index.css'))
-//     // rollbar.info("HTML file served successfully")
-// })
+app.get('/styles', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.css'))
+    rollbar.info("CSS file served successfully")
+})
 
 
 
