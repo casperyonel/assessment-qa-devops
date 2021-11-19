@@ -29,17 +29,17 @@ app.get('/js', (req, res) => {
     // rollbar.info("HTML file served successfully")
 })
 
-app.get('/styles', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.css'))
-    // rollbar.info("HTML file served successfully")
-})
+// app.get('/styles', (req, res) => {
+//     res.sendFile(path.join(__dirname, '/public/index.css'))
+//     // rollbar.info("HTML file served successfully")
+// })
 
 
 
 
 app.get('/api/robots', (req, res) => {
     try {
-        rollbar.info("Clicked!!!!!")
+        rollbar.info("Clicked to see all Robots!")
         res.status(200).send(botsArr)
     } catch (error) {
         console.log('ERROR GETTING BOTS', error)
@@ -61,7 +61,7 @@ app.get('/api/robots/five', (req, res) => {
 
 app.post('/api/duel', (req, res) => {
     try {
-        rollbar.info("POST IS WORKING TOO")
+        rollbar.info("Duel has been clicked!")
         // getting the duos from the front end
         let {compDuo, playerDuo} = req.body
 
@@ -93,7 +93,7 @@ app.post('/api/duel', (req, res) => {
 
 app.get('/api/player', (req, res) => {
     try {
-        rollbar.info("PLAYED IS WORKING WITH GET")
+        rollbar.info("Get is working with api/player endpoint!")
         res.status(200).send(playerRecord)
     } catch (error) {
         console.log('ERROR GETTING PLAYER STATS', error)
